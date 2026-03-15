@@ -1,0 +1,5 @@
+other/
+.github/
+.claude/
+Dockerfile
+commit.sh
