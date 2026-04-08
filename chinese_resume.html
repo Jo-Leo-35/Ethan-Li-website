@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李宗霖｜AI 與系統工程師履歷</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tsmc-red: #cc0000;
+            --tech-black: #0d1117;
+            --tech-gray: #8b949e;
+            --bg-light: #ffffff;
+            --border-line: #d0d7de;
+            --sidebar-bg: #161b22;
+            --scale: 0.92;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            color: var(--tech-black);
+            background-color: #e3e6e8;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Outer container: fixed A4, clips overflow */
+        .page-container {
+            width: 210mm;
+            height: 297mm;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            background: var(--bg-light);
+        }
+
+        /* Inner page: scaled proportionally */
+        .page {
+            width: calc(210mm / var(--scale));
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            transform: scale(var(--scale));
+            transform-origin: top left;
+        }
+
+        /* === Sidebar (Left Column) === */
+        .sidebar {
+            width: 32%;
+            background-color: var(--sidebar-bg);
+            color: #ffffff;
+            padding: 12mm 8mm;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-line);
+        }
+
+        .profile-wrapper {
+            text-align: center;
+            margin-bottom: 8mm;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-zh {
+            font-size: 24pt;
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 4px;
+        }
+
+        .name-en {
+            font-size: 10pt;
+            font-weight: 500;
+            color: #8b949e;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 12px;
+        }
+
+        .role-title {
+            display: inline-block;
+            background: var(--tsmc-red);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 8.5pt;
+            font-weight: 700;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .side-section {
+            margin-bottom: 6mm;
+        }
+
+        .side-title {
+            font-size: 10.5pt;
+            font-weight: 800;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .side-list {
+            list-style: none;
+            font-size: 9pt;
+            color: #c9d1d9;
+        }
+
+        .side-list li {
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-list-icon {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--tsmc-red);
+            font-weight: bold;
+            font-size: 8pt;
+            margin-bottom: 2px;
+            opacity: 0.8;
+        }
+
+        .side-list a {
+            color: #58a6ff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .skill-group {
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tag-dark {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 8pt;
+            color: #c9d1d9;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .qr-wrapper {
+            margin-top: auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            width: fit-content;
+            margin-inline: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            display: block;
+        }
+
+        .qr-text {
+            font-size: 8pt;
+            color: var(--tech-black);
+            margin-top: 6px;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* === Main Content (Right Column) === */
+        .main {
+            width: 68%;
+            padding: 12mm 10mm;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 15pt;
+            font-weight: 900;
+            color: var(--tech-black);
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--tech-black);
+            padding-bottom: 6px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+
+        .section-header::before {
+            content: "/>";
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--tsmc-red);
+            margin-right: 10px;
+            font-size: 14pt;
+            font-weight: 900;
+        }
+
+        .summary-text {
+            font-size: 10pt;
+            text-align: justify;
+            margin-bottom: 8mm;
+            line-height: 1.8;
+            color: #24292f;
+            background: #f6f8fa;
+            border: 1px solid var(--border-line);
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .hlt-red {
+            color: var(--tsmc-red);
+            font-weight: 800;
+        }
+
+        .hlt-bg {
+            background: rgba(204, 0, 0, 0.08);
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 3px;
+            color: var(--tech-black);
+        }
+
+        /* Engineering Timeline */
+        .timeline {
+            border-left: 2px solid var(--border-line);
+            margin-left: 8px;
+            padding-left: 16px;
+            margin-bottom: 8mm;
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 8mm;
+        }
+
+        .tl-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--bg-light);
+            border: 3px solid var(--tsmc-red);
+            border-radius: 50%;
+            left: -24px;
+            top: 4px;
+            box-shadow: 0 0 0 4px var(--bg-light);
+        }
+
+        .tl-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .tl-title {
+            font-size: 11.5pt;
+            font-weight: 900;
+            color: var(--tech-black);
+        }
+
+        .tl-subtitle {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #57606a;
+            margin-left: 6px;
+        }
+
+        .tl-date {
+            font-size: 8.5pt;
+            font-family: 'JetBrains Mono', monospace;
+            color: #57606a;
+            background: #f6f8fa;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
+            font-weight: 600;
+        }
+
+        .tl-content {
+            margin-top: 6px;
+        }
+
+        .tl-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tl-list li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 9.5pt;
+            margin-bottom: 6px;
+            line-height: 1.6;
+            color: #24292f;
+        }
+
+        .tl-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--tsmc-red);
+            font-weight: bold;
+        }
+
+        /* Projects Section - Grid Cards */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .proj-card {
+            border: 1px solid var(--border-line);
+            border-radius: 6px;
+            padding: 12px;
+            background: #ffffff;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .proj-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--tech-black);
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .proj-title {
+            font-size: 10.5pt;
+            font-weight: 800;
+            color: var(--tech-black);
+            margin-bottom: 4px;
+        }
+
+        .proj-date {
+            font-size: 8pt;
+            font-family: 'JetBrains Mono', monospace;
+            color: #57606a;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .proj-desc {
+            font-size: 9pt;
+            color: #24292f;
+            line-height: 1.6;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            html,
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+            }
+
+            .page-container {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                overflow: hidden;
+                margin: 0;
+                page-break-after: avoid;
+            }
+
+            .page {
+                width: calc(210mm / var(--scale));
+                transform: scale(var(--scale));
+                transform-origin: top left;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+    <div class="page">
+        <!-- === SIDEBAR === -->
+        <aside class="sidebar">
+            <div class="profile-wrapper">
+                <img src="image.png" alt="Zong-Lin Li" class="profile-pic">
+                <div class="name-zh">李宗霖</div>
+                <div class="name-en">Li, ZongLin</div>
+                <div class="role-title">AI SYSTEMS ENGINEER</div>
+            </div>
+
+            <div class="side-section">
+                <div class="side-title">Contact</div>
+                <ul class="side-list">
+                    <li>
+                        <span class="side-list-icon">EMAIL /</span>
+                        <a href="mailto:zon75611@gmail.com">zon75611@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="side-list-icon">GITHUB /</span>
+                        <a href="https://github.com/Jo-Leo-35" target="_blank">github.com/Jo-Leo-35</a>
+                    </li>
+                    <li>
+                        <span class="side-list-icon">LINKEDIN /</span>
+                        <a href="https://www.linkedin.com/in/ethan-li-50962b2b1/"
+                            target="_blank">linkedin.com/in/ethan-li</a>
+                    </li>
+                    <li>
+                        <span class="side-list-icon">WEBSITE /</span>
+                        <a href="https://jo-leo-35.github.io/Ethan-Li-website/" target="_blank">jo-leo-35.github.io/Ethan-Li-website/</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="side-section">
+                <div class="side-title">Tech Stack</div>
+
+                <div class="skill-group">
+                    <div class="skill-name">Languages</div>
+                    <div class="skill-tags">
+                        <span class="tag-dark">C/C++</span>
+                        <span class="tag-dark">Python</span>
+                        <span class="tag-dark">SQL</span>
+                        <span class="tag-dark">MATLAB</span>
+                        <span class="tag-dark">Bash</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-name">AI / ML / Infra</div>
+                    <div class="skill-tags">
+                        <span class="tag-dark">PyTorch</span>
+                        <span class="tag-dark">DeepSpeed</span>
+                        <span class="tag-dark">ONNX</span>
+                        <span class="tag-dark">RAG</span>
+                        <span class="tag-dark">AI Agents</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-name">Systems & Cloud</div>
+                    <div class="skill-tags">
+                        <span class="tag-dark">Docker</span>
+                        <span class="tag-dark">RabbitMQ</span>
+                        <span class="tag-dark">GCP</span>
+                        <span class="tag-dark">AWS</span>
+                        <span class="tag-dark">FastAPI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-section">
+                <div class="side-title">Education</div>
+                <ul class="side-list">
+                    <li>
+                        <span class="side-list-icon">NCKU (國立成功大學) /</span>
+                        資訊工程學系 資訊工程專班 碩士 (GPA 3.9/4)
+                    </li>
+                    <li>
+                        <span class="side-list-icon">NCU (國立中央大學) /</span>
+                        數學系 學士（雙主修：物理學系）
+                    </li>
+                </ul>
+            </div>
+
+            <!-- QR Code pointing to personal website / github -->
+            <div class="qr-wrapper">
+                <!-- Using an API to generate the QR code to Github URL / Website -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jo-leo-35.github.io/Ethan-Li-website/English_resume.pdf"
+                    alt="Website QR Code" class="qr-code">
+                <div class="qr-text">SCAN FOR ENGLISH RESUME</div>
+            </div>
+        </aside>
+
+        <!-- === MAIN CONTENT === -->
+        <main class="main">
+
+            <h2 class="section-header">專業摘要</h2>
+            <div class="summary-text">
+                具備資訊工程、金融科技、數學與物理的跨領域背景，在研究與工程實務之間保持高度銜接。就讀成大資工所期間，入學首年即修畢全部碩士課程（<strong>GPA
+                    3.9/4</strong>），展現快速學習與高強度執行力。實務專注於大型語言模型效能最佳化、分散式系統架構設計與大規模資料流處理，曾主導專案<span class="hlt-bg">降低
+                    70% 訓練運算成本與 75% VRAM 用量</span>。擅長從底層原理切入問題，將研究成果轉化為可部署、可維運的工程方案。
+            </div>
+
+            <h2 class="section-header">工作經歷</h2>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-header">
+                        <div>
+                            <span class="tl-title">中華資安國際</span>
+                            <span class="tl-subtitle">| AI 工程師 (AI Engineer)</span>
+                        </div>
+                        <span class="tl-date">Nov 2024 - Present</span>
+                    </div>
+                    <div class="tl-content">
+                        <ul class="tl-list">
+                            <li><strong>LLM 訓練最佳化：</strong>在多 GPU 環境下微調 27B 參數大型語言模型，採用 DeepSpeed ZeRO-2 與 QLoRA 分散式訓練策略，在維持模型品質的前提下<span
+                                    class="hlt-red">降低約 70% 訓練運算成本</span>。</li>
+                            <li><strong>模型量化與推論部署：</strong>透過 ONNX Runtime 匯出模型並進行 4-bit NF4 量化，<span
+                                    class="hlt-red">VRAM 用量降低約 75%</span>，實現資源受限環境下的低延遲推論。</li>
+                            <li><strong>高吞吐資料管線：</strong>運用 RabbitMQ 事件驅動架構設計分散式資料管線，以 Mixin-based OOP Connector 整合 14 種異質資料源，穩定處理<span class="hlt-red">超過 200 萬筆紀錄</span>。</li>
+                            <li><strong>快取架構設計：</strong>設計 Hybrid Cache 機制（Redis + In-Memory），搭配 Circuit Breaker 與 Singleflight 模式，消除高併發推論場景下的快取雪崩問題。</li>
+                            <li><strong>容器化與雲端部署：</strong>將 GPU 訓練與推論環境全面容器化，部署於 GCP 與 RunPod，實現標準化開發流程與一鍵可重現部署。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-header">
+                        <div>
+                            <span class="tl-title">永豐金控 金融市場處交易部</span>
+                            <span class="tl-subtitle">| 研發實習生</span>
+                        </div>
+                        <span class="tl-date">Jan 2023 - Aug 2023</span>
+                    </div>
+                    <div class="tl-content">
+                        <ul class="tl-list">
+                            <li>建置端對端 NLP 自動化流程：串接 Whisper 語音轉文字與 LLM 摘要生成，自動分析聯準會演講內容，協助交易員<span
+                                    class="hlt-red">節省約 90% 人工篩選時間</span>。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-header">代表專案與學術成果</h2>
+            <div class="proj-grid">
+
+                <div class="proj-card">
+                    <div class="proj-title">IEEE ISCAS 2025 國際會議發表</div>
+                    <div class="proj-date">// MapLlama – Two-stage LLM Architecture（第一作者）</div>
+                    <div class="proj-desc">
+                        設計檢索→推理的兩階段推論架構，應用於複雜空間查詢；完成模型微調、效能評測與端對端延遲最佳化，論文獲 IEEE ISCAS 2025 收錄。
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-title">TIP 威脅情報平台（5 微服務架構）</div>
+                    <div class="proj-date">// Threat Intelligence Platform</div>
+                    <div class="proj-desc">
+                        主導企業級平台架構設計：FastAPI + Django + Flask 服務層、Elasticsearch 全文檢索、RabbitMQ 非同步任務排程，搭配 9 支自動化 CronJob，部署於 GCP。
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-title">GovTech 內政黑客松 全國銅牌</div>
+                    <div class="proj-date">// AWS × 內政部（2024）獲獎團隊中唯一學生隊伍</div>
+                    <div class="proj-desc">
+                        負責資料管線開發與模型整合，於資料創新應用競賽中獲頒銅獎。
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-title">成大永豐 AI 獎學金</div>
+                    <div class="proj-date">// NCKU × SinoPac（2024）Top 9%</div>
+                    <div class="proj-desc">
+                        競爭型獎學金，依實務開發能力與學術研究表現綜合評選，錄取率前 9%。
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+    </div>
+
+</body>
+
+</html>

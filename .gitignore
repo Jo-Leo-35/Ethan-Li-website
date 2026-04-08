@@ -1,0 +1,6 @@
+other/
+.github/
+.claude/
+Dockerfile
+commit.sh
+sync_both_repos.sh

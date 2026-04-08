@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zong-Lin Li | AI Engineer Portfolio</title>
+    <meta name="description"
+        content="Zong-Lin Li - AI Engineer based in Taipei. Specialized in LLM, Computer Vision, and Cybersecurity.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="en-US">
+
+    <nav class="site-nav">
+        <div class="container">
+            <a href="#top" class="logo">ZL.</a>
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false"
+                aria-controls="site-links" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="links" id="site-links">
+                <a href="#about"><span class="en">About</span><span class="zh">關於我</span></a>
+                <a href="#experience"><span class="en">Experience</span><span class="zh">經歷</span></a>
+                <a href="#education"><span class="en">Education</span><span class="zh">學歷</span></a>
+                <a href="#projects"><span class="en">Projects/Awards</span><span class="zh">專案/獎項</span></a>
+                <a href="chinese_resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume-btn"><span
+                        class="en">ZH Resume</span><span class="zh">中文履歷</span></a>
+                <a href="English_resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume-btn"><span
+                        class="en">EN Resume</span><span class="zh">英文履歷</span></a>
+                <button id="lang-toggle" class="lang-toggle-btn">
+                    <span class="en">中文</span>
+                    <span class="zh">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="top" class="hero">
+        <div class="container" data-aos="fade-up">
+            <h1>Zong-Lin Li.</h1>
+            <p><span class="en">AI Engineer & Cybersecurity Enthusiast</span><span class="zh">AI 工程師與資安技術愛好者</span></p>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span
+                        style="color: #666; font-size: 12px; margin-left: 10px; font-family: 'JetBrains Mono', monospace;">init.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-keyword">const</span> <span class="code-function">identity</span> = {<br>
+                    &nbsp;&nbsp;name: <span class="code-string">"Zong-Lin Li"</span>,<br>
+                    &nbsp;&nbsp;role: <span class="code-string">"AI Engineer @ Chunghwa Telecom
+                        Cybersecurity"</span>,<br>
+                    &nbsp;&nbsp;education: <span class="code-string">"M.S. FinTech & IE @ NCKU"</span>,<br>
+                    &nbsp;&nbsp;skills: <span class="code-string">"LLM / SecOps / OCR / Data Streams"</span>,<br>
+                    &nbsp;&nbsp;location: <span class="code-string">"Taipei, Taiwan"</span><br>
+                    };<br><br>
+                    <span class="en"><span class="code-comment"># System status: Focusing on LLM Efficiency, Agent dev,
+                            & Scalable Infrastructure</span></span>
+                    <span class="zh"><span class="code-comment"># 系統狀態：專注於 LLM 推論最佳化、AI Agent
+                            開發與大規模資料流處理</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <div class="profile-section" style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
+            <img src="image.png" alt="Zong-Lin Li" class="profile-image" data-aos="fade-right">
+            <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;"><span class="en">About
+                        Me</span><span class="zh">關於我</span></h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    <span class="en">
+                        Hello, I'm Zong-Lin. I am an AI Engineer with an interdisciplinary background bridging Computer
+                        Science, Financial Technology, Mathematics, and Physics. My diverse background and extensive lab
+                        experience provide me with vigorous research capabilities, allowing me to approach system design
+                        with a robust, analytical mindset.
+                    </span>
+                    <span class="zh">
+                        你好，我是宗霖。我是一名 AI 工程師，擁有資訊工程、金融科技、數學與物理的跨領域背景。扎實的數理訓練與雙主修物理的實驗經歷，培養了我嚴謹的分析思維與追求效能極致的工程態度。
+                    </span>
+                </p>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+                    <span class="en">
+                        Currently based at Chunghwa Telecom Cybersecurity, my daily focus lies in optimizing LLM
+                        training and inference efficiency (employing tools like DeepSpeed ZeRO and QLoRA), fine-tuning
+                        massive models, deploying OCR tools, and developing AI agents natively integrated with
+                        cybersecurity tools. With rigorous academic research capabilities, I routinely manage
+                        comprehensive data streaming architectures leveraging Message Queues and robust cloud resources.
+                    </span>
+                    <span class="zh">
+                        目前任職於中華資安國際，日常工作聚焦於大型語言模型的訓練與推論最佳化（包含 DeepSpeed ZeRO、QLoRA 等技術）、模型微調與量化部署，以及結合 AI Agent 與 OCR 的資安工具開發。同時具備扎實的學術研究能力，熟悉透過 Message Queue 與雲端基礎設施處理大規模串流資料。
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="focus-grid" data-aos="fade-up">
+            <div class="focus-box">
+                <div class="focus-icon">🧠</div>
+                <h3 class="en">LLM & Inference Ops</h3>
+                <h3 class="zh">大型語言模型與推論</h3>
+                <p class="en">Fine-tuning massive-scale models using DeepSpeed ZeRO and QLoRA techniques. Focused on
+                    high-throughput and VRAM-efficient LLM production.</p>
+                <p class="zh">善用 DeepSpeed ZeRO 與 QLoRA 技術進行大型模型微調。專注於打造高吞吐量及提升 VRAM 使用效率的 LLM 生產環境。</p>
+            </div>
+            <div class="focus-box">
+                <div class="focus-icon">🛡️</div>
+                <h3 class="en">AI Agents & SecTools</h3>
+                <h3 class="zh">AI Agent 與資安工具</h3>
+                <p class="en">Developing sophisticated AI Agents, OCR tools, and robust cybersecurity software.</p>
+                <p class="zh">開發 AI Agent 與自動化資安分析工具，整合 OCR 技術應用於實務場景。</p>
+            </div>
+            <div class="focus-box">
+                <div class="focus-icon">⚡</div>
+                <h3 class="en">Streaming Architecture</h3>
+                <h3 class="zh">大規模系統與串流架構</h3>
+                <p class="en">Managing distributed message queues (RabbitMQ/Kafka) to ingest massive streaming data at
+                    scale via Cloud infrastructures.</p>
+                <p class="zh">部署高效能分散式 Message Queue，建立足以負荷巨量 Streaming Data 的強健雲端微服務架構。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container secondary-bg"
+        style="background-color: var(--secondary-bg); width: 100%; max-width: 100%; padding: 6rem 0;">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span class="en">Experience</span><span class="zh">工作經歷</span>
+            </h2>
+            <div class="timeline" style="margin-top: 3rem;">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="date"
+                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
+                        <span class="en">Nov 2024 - Present</span><span class="zh">2024 年 11 月 - 至今</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem;"><span class="en">AI
+                            Engineer</span><span class="zh">AI 工程師</span></h3>
+                    <p style="color: var(--text-primary); margin-bottom: 1rem;"><span class="en">Chunghwa Telecom
+                            Cybersecurity</span><span class="zh">中華資安國際</span></p>
+                    <ul class="en"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-left: 1.2rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Optimized LLM inference and training on multi-GPU infrastructure: fine-tuned a 27B-parameter model using DeepSpeed ZeRO-2 and QLoRA, reducing training compute cost by ~70% while preserving model quality.</li>
+                        <li style="margin-bottom: 0.5rem;">Implemented model quantization pipeline: exported models via ONNX Runtime and applied 4-bit NF4 quantization, reducing VRAM footprint by ~75% and enabling low-latency inference on resource-constrained hardware.</li>
+                        <li style="margin-bottom: 0.5rem;">Designed a high-throughput data pipeline using RabbitMQ event-driven architecture, processing 2M+ records across 14 heterogeneous data sources with Mixin-based OOP connectors.</li>
+                        <li style="margin-bottom: 0.5rem;">Architected a Hybrid Cache system (Redis + In-Memory) with Circuit Breaker and Singleflight patterns, eliminating cache stampede under high-concurrency inference workloads.</li>
+                        <li>Containerized GPU training and serving environments on GCP and RunPod, standardizing the ML workflow with reproducible builds and one-command deployments.</li>
+                    </ul>
+                    <ul class="zh"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-left: 1.2rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">在多 GPU 環境下微調 27B 參數大型語言模型，採用 DeepSpeed ZeRO-2 與 QLoRA 分散式訓練策略，在維持模型品質的前提下降低約 70% 訓練運算成本。</li>
+                        <li style="margin-bottom: 0.5rem;">建置模型量化部署流程：透過 ONNX Runtime 匯出模型並進行 4-bit NF4 量化，將 VRAM 用量降低約 75%，實現資源受限環境下的低延遲推論。</li>
+                        <li style="margin-bottom: 0.5rem;">運用 RabbitMQ 事件驅動架構設計高吞吐資料管線，以 Mixin-based OOP Connector 整合 14 種異質資料源，穩定處理超過 200 萬筆紀錄。</li>
+                        <li style="margin-bottom: 0.5rem;">設計 Hybrid Cache 機制（Redis + In-Memory），搭配 Circuit Breaker 與 Singleflight 模式，消除高併發推論場景下的快取雪崩問題。</li>
+                        <li>將 GPU 訓練與推論環境全面容器化，部署於 GCP 與 RunPod，實現標準化 ML 開發流程與一鍵可重現部署。</li>
+                    </ul>
+                    <div class="tag-container" style="margin-top: 1rem;">
+                        <span class="tag">LLM</span>
+                        <span class="tag">DeepSpeed</span>
+                        <span class="tag">ONNX Runtime</span>
+                        <span class="tag">RabbitMQ</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">GCP</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="date"
+                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
+                        <span class="en">Jan 2023 - Aug 2023</span><span class="zh">2023 年 1 月 - 2023 年 8 月</span>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem;"><span class="en">Intern,
+                            Financial Markets Trading</span><span class="zh">金融市場處 實習生</span></h3>
+                    <p style="color: var(--text-primary); margin-bottom: 1rem;"><span class="en">SinoPac
+                            Holdings</span><span class="zh">永豐金控</span></p>
+                    <ul class="en"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-left: 1.2rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">Built web crawlers to collect market-related data; cleaned
+                            and organized datasets for analysis.</li>
+                        <li>Utilized Whisper to transcribe Fed speeches and employed an LLM to generate Chinese
+                            summaries, enabling non-native speakers to quickly grasp market trends and saving traders
+                            90% of their time.</li>
+                    </ul>
+                    <ul class="zh"
+                        style="color: var(--text-secondary); line-height: 1.6; margin-left: 1.2rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">開發客製化爬蟲軟體自動收集金融市場相關動態，並負責資料處理與統整，以供後續量化分析使用。</li>
+                        <li>透過 OpenAI Whisper 模型辨識聯準會（Fed）全英文演講語音，串聯開源 LLM 自動生成提煉後的中文重點摘要。這套自動化流程幫助交易員極速掌握市場訊號，省下了高達 90%
+                            原有的人工過濾時間。</li>
+                    </ul>
+                    <div class="tag-container" style="margin-top: 1rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">Whisper</span>
+                        <span class="tag">Web Crawling</span>
+                        <span class="tag">LLM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="container">
+        <h2 class="section-title" data-aos="fade-up"><span class="en">Education</span><span class="zh">學歷</span></h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <div class="date"><span class="en">Aug 2022 - Aug 2024</span><span class="zh">2022 年 8 月 - 2024 年 8
+                        月</span></div>
+                <h3><span class="en">Master of Science</span><span class="zh">碩士 (已畢業)</span></h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;"><span class="en">National Cheng Kung
+                        University (NCKU)</span><span class="zh">國立成功大學 (NCKU)</span></p>
+                <p class="en" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    Department of Computer Science and Information Engineering.<br>
+                    M.S., Financial Technology & Information Engineering.<br>
+                    <strong>Advisor:</strong> Prof. Wei-Ta Chu<br>
+                    <strong>GPA: 3.9/4</strong>; completed all master's coursework within the first year of study.
+                </p>
+                <p class="zh" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    資訊工程學系所<br>
+                    <strong>指導教授：</strong>朱威達教授 (Prof. Wei-Ta Chu)<br>
+                    <strong>GPA: 3.9/4</strong>；非純血資工背景，於入學首年即順利修畢所有碩士階段必選修學分。
+                </p>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="date"><span class="en">Sep 2017 - Jun 2022</span><span class="zh">2017 年 9 月 - 2022 年 6
+                        月</span></div>
+                <h3><span class="en">Bachelor of Science</span><span class="zh">學士 (已畢業)</span></h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;"><span class="en">National Central
+                        University (NCU)</span><span class="zh">國立中央大學 (NCU)</span></p>
+                <p class="en" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    B.S., Mathematics; Double Major in Physics.
+                </p>
+                <p class="zh" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    數學系（雙主修：物理學系）。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container secondary-bg"
+        style="background-color: var(--secondary-bg); width: 100%; max-width: 100%; padding: 6rem 0;">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><span class="en">Selected Projects & Awards</span><span
+                    class="zh">專案成果與獎項</span></h2>
+
+            <div class="roadmap-wrapper">
+                <button class="scroll-btn scroll-left" onclick="scrollRoadmap('left')" aria-label="Scroll left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="roadmap-scroll" id="projects-roadmap" data-aos="fade-up">
+
+                    <div class="roadmap-item">
+                        <div class="date"><span class="en">2024 - 2025 | Production</span><span class="zh">2024 - 2025 | 產品上線</span></div>
+                        <h3><span class="en">TIP — Threat Intelligence Platform</span><span class="zh">TIP 威脅情報平台</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Led architecture of an enterprise-grade AI platform with 5 microservices, 14+ data connectors, and 20K IOC/batch processing.</li>
+                            <li style="margin-bottom: 0.3rem;">Deployed on GCP VM with Docker Compose orchestration, Hybrid Cache (Redis + In-Memory) with Circuit Breaker, and automated CI/CD pipelines.</li>
+                            <li>Full stack: Django 5 + Vue 3 + FastAPI + Elasticsearch + RabbitMQ + STIX 2.1 standardization.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">主導設計企業級 AI 平台架構，含 5 個微服務、14+ 資料 Connector、每批次處理 20,000 筆 IOC。</li>
+                            <li style="margin-bottom: 0.3rem;">部署於 GCP VM，以 Docker Compose 編排服務，搭配 Hybrid Cache（Redis + In-Memory）與 Circuit Breaker，並建置自動化 CI/CD 流程。</li>
+                            <li>全端技術棧：Django 5 + Vue 3 + FastAPI + Elasticsearch + RabbitMQ + STIX 2.1 標準化。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Microservices</span>
+                            <span class="tag">AI Platform</span>
+                            <span class="tag">Full Stack</span>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="date"><span class="en">Training Completed</span><span class="zh">原廠結業</span></div>
+                        <h3><span class="en">Certified Ethical Hacker</span><span class="zh">CEH 道德駭客認證</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Completed EC-Council authorized offensive coursework.
+                            </li>
+                            <li>Acquired vulnerability assessment and network defense logic.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">完成 EC-Council CEH 原廠授權之實戰攻防訓練課程。</li>
+                            <li>深度掌握駭客技術、弱點掃描，與建立防護系統架構。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">Cybersecurity</span><span
+                                class="tag">CEH</span></div>
+                    </div>
+
+                    <div class="roadmap-item" data-aos-delay="100">
+                        <div class="date"><span class="en">Published: IEEE ISCAS 2025</span><span class="zh">發表於 IEEE
+                                ISCAS
+                                2025</span></div>
+                        <h3><span class="en">MapLlama — Map QA LLM</span><span class="zh">MapLlama 雙階段架構</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Designed a two-stage retrieval & reasoning pipeline.</li>
+                            <li>Fine-tuned robust LLM; published in an international proceeding.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">設計兩階段（檢索 → 推理）演算法架構並主導實驗。</li>
+                            <li>研究成果最終成功發表於電路與系統領域頂級國際會議。</li>
+                        </ul>
+                        <a href="https://doi.org/10.1109/ISCAS56072.2025.11043908" target="_blank"
+                            style="display:inline-block; margin-top:5px; margin-bottom:15px; color:var(--text-primary); text-decoration:none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; align-self: flex-start;">[DOI
+                            10.1109/ISCAS]</a>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">Research</span><span
+                                class="tag">LLM QA</span></div>
+                    </div>
+
+                    <div class="roadmap-item" data-aos-delay="200">
+                        <div class="date"><span class="en">2024 Scholarship</span><span class="zh">2024 年 獎助學金</span>
+                        </div>
+                        <h3><span class="en">NCKU–SinoPac Merit</span><span class="zh">成大永豐 AI 獎學金</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Competitively awarded to the top 9% of NCKU applicants.
+                            </li>
+                            <li>Recognized for outstanding R&D and academic performances.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">計畫競爭極為激烈，僅授予全學程排名前 9% 之頂尖學生。</li>
+                            <li>綜合評估實務 AI 技術開發能力與卓越學研表現。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">Merit</span><span
+                                class="tag">Top 9%</span></div>
+                    </div>
+
+                    <div class="roadmap-item" data-aos-delay="300">
+                        <div class="date"><span class="en">Conference Volunteer</span><span class="zh">國際會議志工</span>
+                        </div>
+                        <h3><span class="en">ACM Multimedia Asia 2023</span><span class="zh">ACM MM Asia 2023</span>
+                        </h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Facilitated equipment operations for Korea's Keynote
+                                speakers.</li>
+                            <li>Collaborated in international academic coordination.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">擔任會議志工，協助海外講者進行設備操作與 Keynote 發表。</li>
+                            <li>在國際學術場合中累積跨文化溝通經驗。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">Global</span><span
+                                class="tag">Multimedia</span></div>
+                    </div>
+
+                    <div class="roadmap-item" data-aos-delay="400">
+                        <div class="date"><span class="en">2023 Bronze Award</span><span class="zh">2023 年 銅牌獎</span>
+                        </div>
+                        <h3><span class="en">GovTech Hackathon</span><span class="zh">內政黑客松 (GovTech)</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Data Innovation Competition by AWS & Ministry of
+                                Interior.
+                            </li>
+                            <li>Led backend coding & massive data pipelines.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">內政部與 AWS 主辦，榜內唯一獲獎之學生團隊。</li>
+                            <li>負責主導高併發後端系統與巨量資料之串接架構。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">AWS / Cloud</span><span
+                                class="tag">Data Engine</span></div>
+                    </div>
+
+                    <div class="roadmap-item" data-aos-delay="500">
+                        <div class="date"><span class="en">High School</span><span class="zh">高中時期</span></div>
+                        <h3><span class="en">NCTU Sci-Fair Best Physics</span><span class="zh">思源科學創意大賽</span></h3>
+                        <ul class="en"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">Awarded Bronze Medal & Best Physics Award.</li>
+                            <li>Designed complex physical mechanisms utilizing rigorous logical reasoning.</li>
+                        </ul>
+                        <ul class="zh"
+                            style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; margin-left: 1.2rem; margin-bottom: 1rem; flex-grow: 1;">
+                            <li style="margin-bottom: 0.3rem;">參加交通大學主辦賽事，榮獲全國銅牌獎與最佳物理獎。</li>
+                            <li>結合機械實作與物理原理，自主設計高精度複雜機構。</li>
+                        </ul>
+                        <div class="tag-container" style="margin-top: auto;"><span class="tag">Physics</span><span
+                                class="tag">Engineering</span></div>
+                    </div>
+
+                </div>
+                <button class="scroll-btn scroll-right" onclick="scrollRoadmap('right')" aria-label="Scroll right">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <p style="text-align: center; margin-top: 3rem;">
+                <a href="https://github.com/Jo-Leo-35" target="_blank"
+                    style="color: var(--text-primary); text-decoration: none; font-size: 0.95rem; font-weight: 500; border-bottom: 1px solid var(--border-color); padding-bottom: 4px; transition: color 0.3s, border-color 0.3s;">
+                    <span class="en">Explore More Repositories on GitHub →</span>
+                    <span class="zh">前往 GitHub 探索更多專案與原始碼 →</span>
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 2rem;">
+        <div class="terminal-window" data-aos="zoom-in" style="margin: 0 auto; margin-top: 2rem;">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <span
+                    style="color: #666; font-size: 12px; margin-left: 10px; font-family: 'JetBrains Mono', monospace;">skills.sh</span>
+            </div>
+            <div class="terminal-body" style="font-size: 1rem; line-height: 1.8;">
+                $ <span class="code-keyword">cat</span> core_skills.txt<br>
+                <span class="code-function"><span class="en">Languages:</span><span class="zh">程式語言：</span></span>
+                Python, SQL, MATLAB, C/C++<br>
+                <span class="code-function"><span class="en">AI/ML:</span><span class="zh">人工智慧：</span></span> PyTorch,
+                DeepSpeed (ZeRO), QLoRA/LoRA, RAG, ONNX, OCR, AI Agent<br>
+                <span class="code-function"><span class="en">Infra & Tools:</span><span class="zh">架構與雲端：</span></span>
+                Docker, GCP VM, AWS EC2, FastAPI, RabbitMQ, Neo4j,
+                Git<br>
+                <span class="code-function"><span class="en">Security:</span><span class="zh">資訊安全：</span></span> CEH
+                (Certified Ethical Hacker)<br>
+                $ <span class="code-keyword">echo</span> <span class="code-string">"<span class="en">Rigorous analytical
+                        thinking + Scalable implementations.</span><span
+                        class="zh">嚴謹的分析思維，打造可擴展的工程方案。</span>"</span><br>
+                <span class="code-string">"<span class="en">Rigorous analytical thinking + Scalable
+                        implementations.</span><span class="zh">嚴謹的分析思維，打造可擴展的工程方案。</span>"</span><br>
+                $ <span class="cursor">_</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="width: 100%; max-width: 900px; display: flex; justify-content: space-between;">
+            <p>&copy; 2026 Zong-Lin Li. Built with precision.</p>
+            <div>
+                <a href="mailto:zon75611@gmail.com">Email</a>
+                <a href="https://github.com/Jo-Leo-35" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/ethan-li-50962b2b1/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        const siteNav = document.querySelector('.site-nav');
+        const menuToggleBtn = document.getElementById('menu-toggle');
+
+        menuToggleBtn.addEventListener('click', () => {
+            const isOpen = siteNav.classList.toggle('nav-open');
+            menuToggleBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const section = document.querySelector(this.getAttribute('href'));
+                    if (section) {
+                        window.scrollTo({
+                            top: section.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                if (siteNav.classList.contains('nav-open')) {
+                    siteNav.classList.remove('nav-open');
+                    menuToggleBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        function scrollRoadmap(direction) {
+            const container = document.getElementById('projects-roadmap');
+            const scrollAmount = 300; // slightly more than item width
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Language Toggle Logic
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const body = document.body;
+
+        // Ensure default language is English if none is saved
+        let currentLang = localStorage.getItem('site-lang') || 'en-US';
+
+        // Remove existing lang classes and set correct one
+        body.classList.remove('en-US', 'zh-TW');
+        body.classList.add(currentLang);
+
+        langToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('en-US')) {
+                body.classList.replace('en-US', 'zh-TW');
+                localStorage.setItem('site-lang', 'zh-TW');
+            } else {
+                body.classList.replace('zh-TW', 'en-US');
+                localStorage.setItem('site-lang', 'en-US');
+            }
+        });
+    </script>
+</body>
+
+</html>
